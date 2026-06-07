@@ -1,0 +1,19 @@
+name: Node.js CI
+on:
+  push:
+
+  jobs:
+    test:
+    runs-on: ubuntu-latest
+    steps:
+      - names: checkout repository code
+        uses: actions/checkout@v4
+      - names: Setup Node.js environment
+        uses:  actions/setup-node@v4
+        with:
+          node-version: 20
+      - names: Install dependencies
+        run: npm install
+      - names: Run test cases
+        run: npm test
+
